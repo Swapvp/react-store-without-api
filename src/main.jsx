@@ -6,17 +6,25 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Details from "./components/Details.jsx";
 import Context from "./utils/Context.jsx";
+import Create from "./components/Create.jsx";
+import Error from "./components/Error.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    ErrorBoundary: "404 Error",
+    ErrorBoundary: <Error />,
   },
   {
     path: "/details/:id",
     element: <Details />,
-    ErrorBoundary: "404 Error",
+    ErrorBoundary: <Error />,
+  },
+
+  {
+    path: "/create",
+    element: <Create />,
+    ErrorBoundary: <Error />,
   },
 ]);
 

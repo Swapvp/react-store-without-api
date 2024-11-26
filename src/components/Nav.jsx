@@ -20,13 +20,13 @@ const Nav = () => {
   return (
     <nav className="w-1/4 bg-slate-300 h-screen p-4">
       <Link
-        to=""
+        to="/create"
         className="border-2 border-red-300 px-3 py-1 hover:bg-red-300 hover:rounded-lg"
         href="#"
       >
         Add Product
       </Link>
-     
+
       <hr className="my-4 w-3/4 mx-auto" />
       <h1 className="text-2xl text-left font-semibold">Category Filters</h1>
       <div className="w-3/4">

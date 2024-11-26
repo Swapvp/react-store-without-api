@@ -40,10 +40,19 @@ const Details = () => {
           <p className="font-semibold text-2xl my-3 text-red-500">
             ${product.price}
           </p>
-          <p className="text-gray-400 text-lg">{product.description}</p>
-          <button className="py-2 px-6 border-2 border-green-300 my-4 hover:bg-green-500 font-semibold text-lg rounded-lg hover:text-white">
-            Add
-          </button>
+          <p className="text-gray-400 text-lg my-4">{product.description}</p>
+          <Link
+            to={"/create"}
+            className="py-2 px-6 border-2 border-green-300 mr-2 mt-4 hover:bg-green-500 font-semibold text-lg rounded-lg hover:text-white"
+          >
+            Create
+          </Link>
+          <Link
+            to={"/delete"}
+            className="py-2 px-6 border-2 border-red-300 mr-2 mt-4 hover:bg-red-500 font-semibold text-lg rounded-lg hover:text-white"
+          >
+            Delete
+          </Link>
         </div>
       </div>
     </>

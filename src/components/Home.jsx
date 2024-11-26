@@ -39,7 +39,6 @@ const Home = () => {
             Home
           </Link>
         ))}
-
       <div className="bg-zinc-100 h-screen w-full flex justify-center gap-6">
         <Nav />
         <div className="w-[75%] flex flex-wrap gap-5 overflow-x-hidden overflow-y-auto mt-20 justify-center">
@@ -67,14 +66,14 @@ const Home = () => {
                       {product.title}
                     </h2>
                   </div>
-                  <div className="my-2">
+                  {/* <div className="my-2">
                     <p className="font-normal text-md">
                       Rating{" "}
                       <span className="text-md font-semibold">
                         {product.rating.rate}
                       </span>
                     </p>
-                  </div>
+                  </div> */}
                 </Link>
               );
             })}
