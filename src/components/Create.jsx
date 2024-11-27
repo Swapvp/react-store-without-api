@@ -4,7 +4,8 @@ import { productContext } from "../utils/Context";
 import { nanoid } from "nanoid";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const validationScheme = yup.object({
   image: yup
@@ -25,6 +26,7 @@ const validationScheme = yup.object({
 });
 
 const Create = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useContext(productContext);
   const {
     register,
@@ -36,15 +38,14 @@ const Create = () => {
   });
 
   const handleSubmitFn = (data) => {
-    console.log(data);
     data.id = nanoid();
     setProduct([...product, data]);
-    console.log(product);
+
+    toast.success("product created");
 
     reset();
+    navigate("/");
   };
-
-  console.log(product);
 
   return (
     <>

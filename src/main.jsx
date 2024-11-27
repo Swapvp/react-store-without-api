@@ -8,6 +8,9 @@ import Details from "./components/Details.jsx";
 import Context from "./utils/Context.jsx";
 import Create from "./components/Create.jsx";
 import Error from "./components/Error.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Delete from "./components/Delete.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +29,19 @@ const router = createBrowserRouter([
     element: <Create />,
     ErrorBoundary: <Error />,
   },
+
+  {
+    path: "/delete",
+    element: <Delete />,
+    ErrorBoundary: <Error />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <Context>
     <RouterProvider router={router}>
       <App />
+      <ToastContainer />
     </RouterProvider>
   </Context>
 );
